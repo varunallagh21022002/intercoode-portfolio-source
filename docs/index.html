@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="A static, non-networked INTERCOODE interface preview.">
+    <title>INTERCOODE | Static preview</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./">INTER<span>COODE</span></a>
+      <span class="preview-badge">STATIC PREVIEW</span>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">Portfolio evidence · client-only visual demo</p>
+        <h1 id="page-title">A calm workspace for interview practice.</h1>
+        <p class="lede">
+          This GitHub Pages preview is intentionally non-networked. It demonstrates
+          the interface direction without connecting to collaboration, authentication,
+          video, AI, or code-execution services.
+        </p>
+        <div class="notice" role="note">
+          <strong>Preview only:</strong> edits stay in this browser tab, and the
+          “Run preview” control only displays a local status message. No code is
+          executed and no request leaves this page.
+        </div>
+      </section>
+
+      <section class="workspace" aria-labelledby="workspace-title">
+        <div class="workspace-heading">
+          <div>
+            <p class="eyebrow">Harmless local interaction</p>
+            <h2 id="workspace-title">Practice room</h2>
+          </div>
+          <span class="connection"><i aria-hidden="true"></i> Offline preview</span>
+        </div>
+
+        <div class="workspace-grid">
+          <aside class="panel room-panel">
+            <p class="panel-label">Room outline</p>
+            <h3>Two pointers</h3>
+            <p class="muted">Practice explaining the invariant before sharing a solution.</p>
+            <ol class="steps">
+              <li class="active"><span>01</span>Clarify the input</li>
+              <li><span>02</span>Choose an invariant</li>
+              <li><span>03</span>Walk through an example</li>
+            </ol>
+            <div class="safe-chip">No room connection</div>
+          </aside>
+
+          <section class="panel editor-panel" aria-label="Local editor preview">
+            <div class="editor-toolbar">
+              <span class="file-tab">solution.js</span>
+              <span class="language">JavaScript · local draft</span>
+            </div>
+            <div class="editor">
+              <div class="line-numbers" aria-hidden="true">1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9</div>
+              <textarea id="code-editor" spellcheck="false" aria-label="Local code draft">function twoSum(numbers, target) {
+  const seen = new Map();
+
+  for (let index = 0; index < numbers.length; index += 1) {
+    const needed = target - numbers[index];
+    if (seen.has(needed)) return [seen.get(needed), index];
+    seen.set(numbers[index], index);
+  }
+
+  return [];
+}</textarea>
+            </div>
+            <div class="editor-actions">
+              <button id="reset-button" class="button secondary" type="button">Reset example</button>
+              <button id="preview-button" class="button primary" type="button">Run preview</button>
+            </div>
+            <p id="editor-status" class="status" role="status">Ready — local editing only.</p>
+          </section>
+        </div>
+      </section>
+
+      <section class="limits" aria-labelledby="limits-title">
+        <p class="eyebrow">Honest boundaries</p>
+        <h2 id="limits-title">What this page does not provide</h2>
+        <div class="limit-grid">
+          <article><span>01</span><h3>No collaboration</h3><p>There is no Socket.IO server or shared room behind this page.</p></article>
+          <article><span>02</span><h3>No authentication</h3><p>There are no accounts, sessions, invitations, or credentials.</p></article>
+          <article><span>03</span><h3>No code execution</h3><p>The editor is visual only; nothing is sent to Judge0 or another runner.</p></article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>INTERCOODE is a sanitized source snapshot based on <a href="https://github.com/varunallagh21022002/CodePulseDL">CodePulseDL</a>, itself a fork of <a href="https://github.com/DakshL1/CodePulse">DakshL1/CodePulse</a>. See the repository <a href="https://github.com/varunallagh21022002/intercoode-portfolio-source">source evidence</a> and included MIT license.</p>
+      <p class="footer-note">This static preview is not the full application and is not a public deployment of its server.</p>
+    </footer>
+    <script src="./app.js"></script>
+  </body>
+</html>
